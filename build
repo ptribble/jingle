@@ -3,7 +3,7 @@
 # build jingle
 #
 
-XFLAGS="-Xlint -Xlint:-serial"
+XFLAGS="-Xlint -Xlint:-serial -Xlint:-rawtypes"
 #XFLAGS=""
 JUMBLEDIR="../jumble"
 
