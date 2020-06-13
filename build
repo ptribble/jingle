@@ -8,12 +8,10 @@ XFLAGS="-Xlint -Xlint:-serial"
 JUMBLEDIR="../jumble"
 
 #
-# run
-# ./build pmd
-# to use this, although this code is noisy enough that it will generate
-# many failures
+# new PMD version has rulesets
 #
-PMDCHECKS="braces,imports,unusedcode,typeresolution,coupling,clone,sunsecure,finalizers,migrating"
+PMDRULES="imports typeresolution clone finalizers sunsecure unusedcode braces migrating strictexception"
+PMDCATRULES="security"
 
 case $1 in
 clean)
@@ -23,7 +21,17 @@ clean)
 	exit 0
 	;;
 pmd)
-	pmd uk $PMDCHECKS
+	RULESETS=""
+	for RULE in $PMDRULES
+	do
+	    RULESETS="${RULESETS},rulesets/java/${RULE}.xml"
+	done
+	for RULE in $PMDCATRULES
+	do
+	    RULESETS="${RULESETS},category/java/${RULE}.xml"
+	done
+	RULESETS=`echo $RULESETS|sed s:,::`
+	pmd -d uk -R $RULESETS -version 1.5 -auxclasspath `echo lib/java/* | sed 's= =:=g'` 2>/dev/null
 	exit 0
 	;;
 doc)
