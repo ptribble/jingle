@@ -53,7 +53,7 @@ public class JingleHPane extends JEditorPane implements HyperlinkListener {
     public void hyperlinkUpdate(HyperlinkEvent ev) {
 	if (ev.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
 	    String desc = ev.getDescription();
-	    if (desc.equals("./")) {
+	    if ("./".equals(desc)) {
 		desc = "index.html";
 	    }
 	    // if (ev.getURL() != null) {

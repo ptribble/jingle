@@ -10,7 +10,7 @@ JUMBLEDIR="../jumble"
 #
 # new PMD version has rulesets
 #
-PMDRULES="imports typeresolution clone finalizers sunsecure unusedcode braces migrating strictexception"
+PMDRULES="imports typeresolution clone finalizers sunsecure unusedcode braces migrating strictexception unnecessary basic"
 PMDCATRULES="security"
 
 case $1 in

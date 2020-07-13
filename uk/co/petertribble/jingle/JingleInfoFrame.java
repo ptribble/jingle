@@ -1,7 +1,7 @@
 /*
  * JINGLE
  *
- * Copyright (C) 2005-2007 Peter C. Tribble
+ * Copyright (C) 2005-2020 Peter C. Tribble
  *
  * You may contact the author by email: peter.tribble@gmail.com
  */
@@ -19,8 +19,6 @@ import uk.co.petertribble.jumble.JumbleFile;
  * simple text, and has a button to close the window.
  */
 public class JingleInfoFrame extends JFrame implements ActionListener {
-
-    private JButton closeButton;
 
     /**
      * Creates a window displaying the contents of the given <code>File</code>.
@@ -106,7 +104,8 @@ public class JingleInfoFrame extends JFrame implements ActionListener {
 	buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 	buttonPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 	buttonPanel.add(Box.createHorizontalGlue());
-	closeButton = new JButton(JingleResources.getString("INFO.CLOSE.TEXT"));
+	JButton closeButton = new
+	    JButton(JingleResources.getString("INFO.CLOSE.TEXT"));
 	closeButton.addActionListener(this);
 	buttonPanel.add(closeButton);
 	p.add(buttonPanel, BorderLayout.SOUTH);
