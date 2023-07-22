@@ -12,7 +12,7 @@ JUMBLEDIR="../jumble"
 #
 PMDRULES="imports typeresolution clone finalizers sunsecure unusedcode braces migrating strictexception unnecessary basic"
 PMDCATRULES="security"
-PMDCACHE="${HOME}/.pmd/cache.jingle"
+PMDCACHE="${HOME}/.pmd/cache.pkgview"
 
 case $1 in
 clean)
