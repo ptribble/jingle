@@ -1,7 +1,7 @@
 /*
  * JINGLE
  *
- * Copyright (C) 2008  Peter C. Tribble
+ * Copyright (C) 2008-2024  Peter C. Tribble
  *
  * You may contact the author by email: peter.tribble@gmail.com
  *
@@ -35,6 +35,7 @@ public class JingleTextPane extends JEditorPane {
 	setContentType(content_type);
     }
 
+    @Override
     public void setText(String s) {
 	super.setText(s);
 	setMargin(new Insets(5, 5, 5, 5));

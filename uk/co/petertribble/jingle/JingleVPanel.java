@@ -1,7 +1,7 @@
 /*
  * JINGLE
  *
- * Copyright (C) 2004-2007  Peter C. Tribble
+ * Copyright (C) 2004-2024  Peter C. Tribble
  *
  * You may contact the author by email: peter.tribble@gmail.com
  */
@@ -21,22 +21,27 @@ import java.awt.Rectangle;
  */
 public class JingleVPanel extends JPanel implements Scrollable {
 
+    @Override
     public Dimension getPreferredScrollableViewportSize() {
 	return getPreferredSize();
     }
 
+    @Override
     public int getScrollableBlockIncrement(Rectangle r, int o, int d) {
 	return r.height;
     }
 
+    @Override
     public int getScrollableUnitIncrement(Rectangle r, int o, int d) {
 	return 24;
     }
 
+    @Override
     public boolean getScrollableTracksViewportWidth() {
 	return true;
     }
 
+    @Override
     public boolean getScrollableTracksViewportHeight() {
 	return false;
     }

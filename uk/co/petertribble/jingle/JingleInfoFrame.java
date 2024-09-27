@@ -1,7 +1,7 @@
 /*
  * JINGLE
  *
- * Copyright (C) 2005-2020 Peter C. Tribble
+ * Copyright (C) 2005-2024 Peter C. Tribble
  *
  * You may contact the author by email: peter.tribble@gmail.com
  */
@@ -115,11 +115,13 @@ public class JingleInfoFrame extends JFrame implements ActionListener {
     }
 
     class winExit extends WindowAdapter {
+	@Override
 	public void windowClosing(WindowEvent we) {
 	    dispose();
 	}
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
 	setVisible(false);
 	dispose();

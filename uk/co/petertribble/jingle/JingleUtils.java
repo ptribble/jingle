@@ -1,7 +1,7 @@
 /**
  * JINGLE
  *
- * Copyright (C) 2004-2007 Peter C. Tribble
+ * Copyright (C) 2004-2024 Peter C. Tribble
  *
  * You may contact the author by email: peter.tribble@gmail.com
  */
@@ -42,6 +42,7 @@ public class JingleUtils {
 	final JMenuItem fileMenuExit = new JMenuItem(
 		JingleResources.getString("FILE.EXIT.TEXT"), KeyEvent.VK_E);
 	fileMenuExit.addActionListener(new ActionListener() {
+	    @Override
 	    public void actionPerformed(ActionEvent e) {
 		System.exit(0);
 	    }
@@ -61,6 +62,7 @@ public class JingleUtils {
 	final JMenuItem fileMenuExit = new JMenuItem(
 		JingleResources.getString("FILE.CLOSE.TEXT"), KeyEvent.VK_C);
 	fileMenuExit.addActionListener(new ActionListener() {
+	    @Override
 	    public void actionPerformed(ActionEvent e) {
 		f.dispose();
 	    }

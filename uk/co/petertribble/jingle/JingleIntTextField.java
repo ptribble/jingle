@@ -1,7 +1,7 @@
 /*
  * JINGLE
  *
- * Copyright (C) 2004-2009 Peter C. Tribble
+ * Copyright (C) 2004-2024 Peter C. Tribble
  *
  * You may contact the author by email: peter.tribble@gmail.com
  */
@@ -24,12 +24,14 @@ public class JingleIntTextField extends JTextField {
 	super(Integer.toString(value), cols);
     }
 
+    @Override
     protected Document createDefaultModel() {
 	return new IntegerDocument();
     }
 
     static class IntegerDocument extends PlainDocument {
 
+	@Override
 	public void insertString(int offs, String str, AttributeSet a)
             throws BadLocationException {
 		if (str == null) {

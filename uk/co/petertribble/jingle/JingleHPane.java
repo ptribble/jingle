@@ -1,7 +1,7 @@
 /*
  * JINGLE
  *
- * Copyright (C) 2004  Peter C. Tribble
+ * Copyright (C) 2004-2024  Peter C. Tribble
  *
  * You may contact the author by email: peter.tribble@gmail.com
  *
@@ -50,6 +50,7 @@ public class JingleHPane extends JEditorPane implements HyperlinkListener {
 	setEditable(false);
     }
 
+    @Override
     public void hyperlinkUpdate(HyperlinkEvent ev) {
 	if (ev.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
 	    String desc = ev.getDescription();
