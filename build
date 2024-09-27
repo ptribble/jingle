@@ -1,7 +1,12 @@
 #!/bin/sh
 #
+# SPDX-License-Identifier: CDDL-1.0
+#
 # build jingle
 #
+
+PATH=/usr/jdk/instances/jdk1.8.0/bin:$PATH
+export PATH
 
 XFLAGS="-Xlint -Xlint:-serial -Xlint:-rawtypes"
 #XFLAGS=""
