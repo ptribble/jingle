@@ -1,7 +1,7 @@
 /*
  * JINGLE
  *
- * Copyright (C) 2004  Peter C. Tribble
+ * Copyright (C) 2004-2024  Peter C. Tribble
  *
  * You may contact the author by email: peter.tribble@gmail.com
  *
@@ -42,7 +42,8 @@ public class JingleHLabel extends JLabel {
 	    int ibeg = 0;
 	    int iend = 50;
 	    int stop;
-	    StringBuilder sb = new StringBuilder("<html>");
+	    StringBuilder sb = new StringBuilder(32);
+	    sb.append("<html>");
 	    while ((stop = tip.indexOf(' ', iend)) > 0) {
 		sb.append(tip.substring(ibeg, stop)).append("&nbsp;<BR>");
 		iend = stop + 50;

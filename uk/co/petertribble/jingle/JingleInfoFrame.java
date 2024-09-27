@@ -79,7 +79,7 @@ public class JingleInfoFrame extends JFrame implements ActionListener {
 	    StringBuilder sb = new StringBuilder();
 	    String line;
 	    while ((line = br.readLine()) != null) {
-		sb.append(line).append("\n");
+		sb.append(line).append('\n');
 	    }
 	    text = sb.toString();
 	} catch (IOException ioe) {
