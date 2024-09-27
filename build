@@ -13,9 +13,8 @@ XFLAGS="-Xlint -Xlint:-serial -Xlint:-rawtypes"
 JUMBLEDIR="../jumble"
 
 #
-# new PMD version has rulesets
+# new PMD version has categories only
 #
-PMDRULES="imports typeresolution clone finalizers sunsecure unusedcode braces migrating strictexception unnecessary basic"
 PMDCATRULES="security"
 PMDCACHE="${HOME}/.pmd/cache.pkgview"
 
@@ -28,11 +27,8 @@ clean)
 	;;
 pmd|-pmd)
 	RULESETS=""
-	for RULE in $PMDRULES
-	do
-	    RULESETS="${RULESETS},rulesets/java/${RULE}.xml"
-	done
-	for RULE in $PMDCATRULES
+	shift
+	for RULE in $PMDCATRULES "$@"
 	do
 	    RULESETS="${RULESETS},category/java/${RULE}.xml"
 	done
