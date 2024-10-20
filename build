@@ -8,7 +8,7 @@
 PATH=/usr/jdk/instances/jdk1.8.0/bin:$PATH
 export PATH
 
-XFLAGS="-Xlint -Xlint:-serial -Xlint:-rawtypes"
+XFLAGS="-Xlint -Xlint:-rawtypes"
 #XFLAGS=""
 JUMBLEDIR="../jumble"
 

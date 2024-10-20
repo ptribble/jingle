@@ -23,6 +23,8 @@ import javax.swing.event.*;
  */
 public class JingleHPane extends JEditorPane implements HyperlinkListener {
 
+    private static final long serialVersionUID = 1L;
+
     private JTabbedPane jtp;
 
     public JingleHPane(String text) {

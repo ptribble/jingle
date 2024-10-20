@@ -21,6 +21,8 @@ import java.awt.Rectangle;
  */
 public class JingleVPanel extends JPanel implements Scrollable {
 
+    private static final long serialVersionUID = 1L;
+
     @Override
     public Dimension getPreferredScrollableViewportSize() {
 	return getPreferredSize();

@@ -20,6 +20,8 @@ import java.awt.Insets;
  */
 public class JingleTextPane extends JEditorPane {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * Create a Scrollable panel containing Text
      */

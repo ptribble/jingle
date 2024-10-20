@@ -20,6 +20,8 @@ import java.awt.Color;
  */
 public class JingleHLabel extends JLabel {
 
+    private static final long serialVersionUID = 1L;
+
     public JingleHLabel(String text) {
 	this(text, (String) null, (Color) null);
     }

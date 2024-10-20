@@ -16,6 +16,8 @@ import javax.swing.text.*;
  */
 public class JingleIntTextField extends JTextField {
 
+    private static final long serialVersionUID = 1L;
+
     public JingleIntTextField(int cols) {
 	super(cols);
     }
@@ -30,6 +32,7 @@ public class JingleIntTextField extends JTextField {
     }
 
     static class IntegerDocument extends PlainDocument {
+	private static final long serialVersionUID = 1L;
 
 	@Override
 	public void insertString(int offs, String str, AttributeSet a)

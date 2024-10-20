@@ -20,6 +20,8 @@ import uk.co.petertribble.jumble.JumbleFile;
  */
 public class JingleInfoFrame extends JFrame implements ActionListener {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * Creates a window displaying the contents of the given <code>File</code>.
      *
