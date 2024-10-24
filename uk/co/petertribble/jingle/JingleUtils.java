@@ -13,7 +13,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * A collection of miscellaneous graphical functions used by applications
+ * A collection of miscellaneous graphical functions used by applications.
  *
  * @author Peter Tribble
  * @version 1.1
@@ -22,7 +22,7 @@ import java.awt.event.*;
 public class JingleUtils {
 
     /**
-     * Locate a window centrally on the screen
+     * Locate a window centrally on the screen.
      *
      * @param w The Window to be positioned
      */
@@ -33,7 +33,7 @@ public class JingleUtils {
     }
 
     /**
-     * Gives a menubar that just does file-exit
+     * Gives a menubar that just does file-exit.
      */
     public static JMenuBar exitMenuBar() {
 	JMenuBar menuPanel = new JMenuBar();
@@ -53,7 +53,7 @@ public class JingleUtils {
     }
 
     /**
-     * Gives a menubar that just does file-close
+     * Gives a menubar that just does file-close.
      */
     public static JMenuBar closeMenuBar(final JFrame f) {
 	JMenuBar menuPanel = new JMenuBar();

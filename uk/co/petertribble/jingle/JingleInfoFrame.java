@@ -116,7 +116,7 @@ public class JingleInfoFrame extends JFrame implements ActionListener {
 	setVisible(true);
     }
 
-    class winExit extends WindowAdapter {
+    class WindowExit extends WindowAdapter {
 	@Override
 	public void windowClosing(WindowEvent we) {
 	    dispose();

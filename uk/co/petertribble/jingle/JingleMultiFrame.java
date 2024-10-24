@@ -33,7 +33,7 @@ public class JingleMultiFrame {
      * Inserts the given <code>JFrame</code> and <code>JMenuItem</code> into
      * the registry.
      */
-    static public void register(JFrame f, JMenuItem jmi) {
+    public static void register(JFrame f, JMenuItem jmi) {
 	freg.put(f, jmi);
 	setEnabled(freg.size() > 1);
     }
@@ -43,7 +43,7 @@ public class JingleMultiFrame {
      * <code>JFrame</code>s, exit the JVM. If there is only a single remaining
      * <code>JFrame</code>, disable its menu item.
      */
-    static public void unregister(JFrame f) {
+    public static void unregister(JFrame f) {
 	f.dispose();
 	freg.remove(f);
 	if (freg.isEmpty()) {

@@ -316,7 +316,7 @@ public class TableSorter extends AbstractTableModel {
     private class Row implements Comparable<Row> {
         int modelIndex;
 
-        public Row(int index) {
+        Row(int index) {
             this.modelIndex = index;
         }
 
@@ -343,8 +343,8 @@ public class TableSorter extends AbstractTableModel {
                     comparison = getComparator(column).compare(o1, o2);
                 }
                 if (comparison != 0) {
-                    return directive.direction ==
-			DESCENDING ? -comparison : comparison;
+                    return directive.direction
+			== DESCENDING ? -comparison : comparison;
                 }
             }
             return 0;
@@ -436,8 +436,8 @@ public class TableSorter extends AbstractTableModel {
 		JTable table = h.getTable();
 		TableModel tableModel = table.getModel();
 		Class columnType = tableModel.getColumnClass(column);
-		if (columnType != null &&
-			Number.class.isAssignableFrom(columnType)) {
+		if (columnType != null
+			&& Number.class.isAssignableFrom(columnType)) {
 		    // Time should also be descending, but a raw Date is
 		    // not usually loaded into a table as-is. Whatever
 		    // class formats time values for display should
@@ -484,7 +484,7 @@ public class TableSorter extends AbstractTableModel {
         private int size;
         private int priority;
 
-        public Arrow(boolean ascending, int size, int priority) {
+        Arrow(boolean ascending, int size, int priority) {
             this.ascending = ascending;
             this.size = size;
             this.priority = priority;
@@ -526,7 +526,7 @@ public class TableSorter extends AbstractTableModel {
     private class SortableHeaderRenderer implements TableCellRenderer {
         TableCellRenderer tableCellRenderer;
 
-        public SortableHeaderRenderer(TableCellRenderer tableCellRenderer) {
+        SortableHeaderRenderer(TableCellRenderer tableCellRenderer) {
             this.tableCellRenderer = tableCellRenderer;
         }
 
@@ -554,7 +554,7 @@ public class TableSorter extends AbstractTableModel {
         int column;
         int direction;
 
-        public Directive(int column, int direction) {
+        Directive(int column, int direction) {
             this.column = column;
             this.direction = direction;
         }

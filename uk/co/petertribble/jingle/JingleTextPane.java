@@ -14,7 +14,7 @@ import javax.swing.JEditorPane;
 import java.awt.Insets;
 
 /**
- * A Scrollable panel containing Text
+ * A Scrollable panel containing Text.
  *
  * @author Peter C. Tribble (peter.tribble@gmail.com)
  */
@@ -23,18 +23,18 @@ public class JingleTextPane extends JEditorPane {
     private static final long serialVersionUID = 1L;
 
     /**
-     * Create a Scrollable panel containing Text
+     * Create a Scrollable panel containing Text.
      */
     public JingleTextPane() {
 	this("text/html");
     }
 
     /**
-     * Create a Scrollable panel containing Text
+     * Create a Scrollable panel containing Text.
      */
-    public JingleTextPane(String content_type) {
+    public JingleTextPane(String contentType) {
 	super();
-	setContentType(content_type);
+	setContentType(contentType);
     }
 
     @Override
