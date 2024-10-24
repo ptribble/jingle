@@ -46,10 +46,6 @@ doc|-doc)
     ;;
 esac
 
-if [ -x /opt/onbld/bin/jstyle ]; then
-    /opt/onbld/bin/jstyle `find uk/co/petertribble/jingle -name 'Jingle*.java'`
-fi
-
 javac ${XFLAGS} -classpath ${JUMBLEDIR}/jumble.jar uk/co/petertribble/jingle/*.java
 
 jar cf jingle.jar properties/*.properties `find uk/co/petertribble/jingle -name '*.class'`
