@@ -26,7 +26,7 @@ public class JingleMultiFrame {
     private static Map <JFrame, JMenuItem> freg;
 
     static {
-	freg = new HashMap <JFrame, JMenuItem> ();
+	freg = new HashMap<>();
     }
 
     /**
