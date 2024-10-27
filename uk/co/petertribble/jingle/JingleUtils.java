@@ -19,7 +19,10 @@ import java.awt.event.*;
  * @version 1.1
  *
  */
-public class JingleUtils {
+public final class JingleUtils {
+
+    private JingleUtils() {
+    }
 
     /**
      * Locate a window centrally on the screen.
@@ -28,8 +31,8 @@ public class JingleUtils {
      */
     public static void Center(Window w) {
 	Dimension d = w.getToolkit().getScreenSize();
-	w.setLocation(((int)d.getWidth()-w.getWidth())/2,
-		((int)d.getHeight()-w.getHeight())/2);
+	w.setLocation(((int) d.getWidth()-w.getWidth())/2,
+		((int) d.getHeight()-w.getHeight())/2);
     }
 
     /**

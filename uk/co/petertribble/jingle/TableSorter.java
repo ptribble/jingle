@@ -81,7 +81,8 @@ public class TableSorter extends AbstractTableModel {
     public static final int NOT_SORTED = 0;
     public static final int ASCENDING = 1;
 
-    private static Directive EMPTY_DIRECTIVE = new Directive(-1, NOT_SORTED);
+    private static final Directive EMPTY_DIRECTIVE
+	= new Directive(-1, NOT_SORTED);
 
     public static final Comparator COMPARABLE_COMPARATOR = new Comparator() {
 	@SuppressWarnings("unchecked")
@@ -103,8 +104,8 @@ public class TableSorter extends AbstractTableModel {
     private JTableHeader tableHeader;
     private MouseListener mouseListener;
     private TableModelListener tableModelListener;
-    private Map <Class, Comparator> columnComparators = new HashMap<>();
-    List <Directive> sortingColumns = new ArrayList<>();
+    private Map<Class, Comparator> columnComparators = new HashMap<>();
+    List<Directive> sortingColumns = new ArrayList<>();
 
     public TableSorter() {
         this.mouseListener = new MouseHandler();
@@ -350,7 +351,7 @@ public class TableSorter extends AbstractTableModel {
         }
     }
 
-    private class TableModelHandler implements TableModelListener {
+    private final class TableModelHandler implements TableModelListener {
 	@Override
         public void tableChanged(TableModelEvent e) {
             // If we're not sorting by anything, just pass the event along.
@@ -410,7 +411,7 @@ public class TableSorter extends AbstractTableModel {
         }
     }
 
-    private class MouseHandler extends MouseAdapter {
+    private final class MouseHandler extends MouseAdapter {
 	@Override
         public void mouseClicked(MouseEvent e) {
             JTableHeader h = (JTableHeader) e.getSource();
@@ -497,7 +498,7 @@ public class TableSorter extends AbstractTableModel {
 	    Polygon pol = new Polygon();
             // In a compound sort, make each successive triangle 20%
             // smaller than the previous one.
-            int dx = (int)(size/2*Math.pow(0.8, priority));
+            int dx = (int) (size/2*Math.pow(0.8, priority));
 	    dx = ascending ? dx +1 : dx;
             int dy = ascending ? dx : -dx;
             // Align icon (roughly) with font baseline.

@@ -21,12 +21,15 @@ import java.util.HashMap;
  * @author Peter C. Tribble (peter.tribble@gmail.com)
  * @version 1.1
  */
-public class JingleMultiFrame {
+public final class JingleMultiFrame {
 
-    private static Map <JFrame, JMenuItem> freg;
+    private static Map<JFrame, JMenuItem> freg;
 
     static {
 	freg = new HashMap<>();
+    }
+
+    private JingleMultiFrame() {
     }
 
     /**

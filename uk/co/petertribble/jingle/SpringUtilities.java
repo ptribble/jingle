@@ -14,7 +14,11 @@ import java.awt.Component;
  * These utilities are used by several programs, such as
  * SpringBox and SpringCompactGrid.
  */
-public class SpringUtilities {
+public final class SpringUtilities {
+
+    private SpringUtilities() {
+    }
+
     /**
      * A debugging utility that prints to stdout the component's
      * minimum, preferred, and maximum sizes.
@@ -45,7 +49,7 @@ public class SpringUtilities {
                                 int xPad, int yPad) {
         SpringLayout layout;
         try {
-            layout = (SpringLayout)parent.getLayout();
+            layout = (SpringLayout) parent.getLayout();
         } catch (ClassCastException exc) {
             System.err.println("First arg to makeGrid must use SpringLayout.");
             return;
@@ -149,7 +153,7 @@ public class SpringUtilities {
                                        int xPad, int yPad) {
         SpringLayout layout;
         try {
-            layout = (SpringLayout)parent.getLayout();
+            layout = (SpringLayout) parent.getLayout();
         } catch (ClassCastException exc) {
             System.err.println("makeCompactGrid arg must use SpringLayout.");
             return;

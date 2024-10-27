@@ -24,15 +24,15 @@ package uk.co.petertribble.jingle;
 
 import java.util.ResourceBundle;
 
-public class JingleResources {
+public final class JingleResources {
 
-    private static ResourceBundle jingleres =
+    private static final ResourceBundle JINGLERES =
 	ResourceBundle.getBundle("properties/jingle");
 
     private JingleResources() {
     }
 
     public static String getString(String key) {
-	return jingleres.getString(key);
+	return JINGLERES.getString(key);
     }
 }
