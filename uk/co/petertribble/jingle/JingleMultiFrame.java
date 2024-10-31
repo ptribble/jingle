@@ -1,7 +1,7 @@
 /*
  * JINGLE
  *
- * Copyright (C) 2005-2008 Peter C. Tribble
+ * Copyright (C) 2005-2024 Peter C. Tribble
  *
  * You may contact the author by email: peter.tribble@gmail.com
  */
@@ -35,6 +35,9 @@ public final class JingleMultiFrame {
     /**
      * Inserts the given <code>JFrame</code> and <code>JMenuItem</code> into
      * the registry.
+     *
+     * @param f the JFrame to add to the registry
+     * @param jmi the JMenuItem used to exit the given JFrame
      */
     public static void register(JFrame f, JMenuItem jmi) {
 	freg.put(f, jmi);
@@ -45,6 +48,8 @@ public final class JingleMultiFrame {
      * Unregister the given <code>JFrame</code>. If there are no remaining
      * <code>JFrame</code>s, exit the JVM. If there is only a single remaining
      * <code>JFrame</code>, disable its menu item.
+     *
+     * @param f the JFrame to remove from the registry
      */
     public static void unregister(JFrame f) {
 	f.dispose();

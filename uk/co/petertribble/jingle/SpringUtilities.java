@@ -9,7 +9,7 @@ import java.awt.Component;
  */
 
 /**
- * A 1.4 file that provides utility methods for
+ * A JDK 1.4 file that provides utility methods for
  * creating form- or grid-style layouts with SpringLayout.
  * These utilities are used by several programs, such as
  * SpringBox and SpringCompactGrid.
@@ -22,6 +22,8 @@ public final class SpringUtilities {
     /**
      * A debugging utility that prints to stdout the component's
      * minimum, preferred, and maximum sizes.
+     *
+     * @param c the Component whose details will be printed
      */
     public static void printSizes(Component c) {
         System.out.println("minimumSize = " + c.getMinimumSize());
@@ -36,6 +38,7 @@ public final class SpringUtilities {
      * preferred width and height of the components.
      * The parent is made just big enough to fit them all.
      *
+     * @param parent container containing components
      * @param rows number of rows
      * @param cols number of columns
      * @param initialX x location to start the grid at
@@ -140,6 +143,7 @@ public final class SpringUtilities {
      * height is similarly determined for each row.
      * The parent is made just big enough to fit them all.
      *
+     * @param parent container containing components
      * @param rows number of rows
      * @param cols number of columns
      * @param initialX x location to start the grid at

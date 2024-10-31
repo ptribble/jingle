@@ -23,7 +23,8 @@ public class JingleTextPane extends JEditorPane {
     private static final long serialVersionUID = 1L;
 
     /**
-     * Create a Scrollable panel containing Text.
+     * Create a Scrollable panel containing Text, assumed to be of
+     * type text/html.
      */
     public JingleTextPane() {
 	this("text/html");
@@ -31,6 +32,8 @@ public class JingleTextPane extends JEditorPane {
 
     /**
      * Create a Scrollable panel containing Text.
+     *
+     * @param contentType the content type used to format the content
      */
     public JingleTextPane(String contentType) {
 	super();

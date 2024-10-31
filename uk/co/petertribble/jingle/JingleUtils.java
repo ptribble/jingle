@@ -37,6 +37,8 @@ public final class JingleUtils {
 
     /**
      * Gives a menubar that just does file-exit.
+     *
+     * @return the populated JMenuBar
      */
     public static JMenuBar exitMenuBar() {
 	JMenuBar menuPanel = new JMenuBar();
@@ -57,6 +59,10 @@ public final class JingleUtils {
 
     /**
      * Gives a menubar that just does file-close.
+     *
+     * @param f the JFrame that the JMenuBar will be attached to
+     *
+     * @return the populated JMenuBar
      */
     public static JMenuBar closeMenuBar(final JFrame f) {
 	JMenuBar menuPanel = new JMenuBar();
@@ -76,7 +82,10 @@ public final class JingleUtils {
     }
 
     /**
-     * Creates an informational popup.
+     * Creates an informational popup displaying a message.
+     *
+     * @param f the JFrame that the popup will be related to
+     * @param msg the text of the message to be displayed
      */
     public static void infoPopup(JFrame f, String msg) {
 	JOptionPane.showMessageDialog(f, msg,
@@ -85,7 +94,10 @@ public final class JingleUtils {
     }
 
     /**
-     * Creates a warning popup.
+     * Creates a warning popup displaying a message.
+     *
+     * @param f the JFrame that the popup will be related to
+     * @param msg the text of the message to be displayed
      */
     public static void warningPopup(JFrame f, String msg) {
 	JOptionPane.showMessageDialog(f, msg,
@@ -94,7 +106,10 @@ public final class JingleUtils {
     }
 
     /**
-     * Creates an error popup.
+     * Creates an error popup displaying a message.
+     *
+     * @param f the JFrame that the popup will be related to
+     * @param msg the text of the message to be displayed
      */
     public static void errorPopup(JFrame f, String msg) {
 	JOptionPane.showMessageDialog(f, msg,
