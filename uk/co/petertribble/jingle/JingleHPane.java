@@ -59,10 +59,7 @@ public class JingleHPane extends JEditorPane implements HyperlinkListener {
 	    if ("./".equals(desc)) {
 		desc = "index.html";
 	    }
-	    // if (ev.getURL() != null) {
-	    // System.out.println("URL: " + ev.getURL());
-	    // }
-	    System.out.println("Link: " + desc);
+	    // System.out.println("Link: " + desc);
 	    if (jtp.indexOfTab(desc) > -1) {
 		jtp.setSelectedIndex(jtp.indexOfTab(desc));
 	    }

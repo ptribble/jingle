@@ -1,8 +1,8 @@
 package uk.co.petertribble.jingle;
 
 import javax.swing.*;
-import java.awt.Container;
 import java.awt.Component;
+import java.awt.Container;
 
 /*
  * Taken from the Swing Tutorial.
@@ -17,18 +17,6 @@ import java.awt.Component;
 public final class SpringUtilities {
 
     private SpringUtilities() {
-    }
-
-    /**
-     * A debugging utility that prints to stdout the component's
-     * minimum, preferred, and maximum sizes.
-     *
-     * @param c the Component whose details will be printed
-     */
-    public static void printSizes(Component c) {
-        System.out.println("minimumSize = " + c.getMinimumSize());
-        System.out.println("preferredSize = " + c.getPreferredSize());
-        System.out.println("maximumSize = " + c.getMaximumSize());
     }
 
     /**
