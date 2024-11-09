@@ -11,15 +11,30 @@
 
 package uk.co.petertribble.jingle;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Polygon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JLabel;
+import javax.swing.JTable;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
-import javax.swing.table.*;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.JTableHeader;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableModel;
 
 /**
  * TableSorter is a decorator for TableModels; adding sorting
@@ -74,7 +89,9 @@ import javax.swing.table.*;
  */
 
 public class TableSorter extends AbstractTableModel {
+
     private static final long serialVersionUID = 1L;
+
     protected TableModel tableModel;
 
     public static final int DESCENDING = -1;
@@ -99,13 +116,13 @@ public class TableSorter extends AbstractTableModel {
     };
 
     private Row[] viewToModel;
-    int[] modelToView;
+    private int[] modelToView;
 
     private JTableHeader tableHeader;
     private MouseListener mouseListener;
     private TableModelListener tableModelListener;
     private Map<Class, Comparator> columnComparators = new HashMap<>();
-    List<Directive> sortingColumns = new ArrayList<>();
+    private List<Directive> sortingColumns = new ArrayList<>();
 
     public TableSorter() {
         this.mouseListener = new MouseHandler();
@@ -123,7 +140,7 @@ public class TableSorter extends AbstractTableModel {
         setTableModel(tableModel);
     }
 
-    void clearSortingState() {
+    private void clearSortingState() {
         viewToModel = null;
         modelToView = null;
     }
@@ -174,7 +191,7 @@ public class TableSorter extends AbstractTableModel {
         return sortingColumns.size() != 0;
     }
 
-    Directive getDirective(int column) {
+    private Directive getDirective(int column) {
         for (Directive d : sortingColumns) {
             if (d.column == column) {
                 return d;
@@ -219,7 +236,7 @@ public class TableSorter extends AbstractTableModel {
 		sortingColumns.indexOf(d));
     }
 
-    void cancelSorting() {
+    private void cancelSorting() {
         sortingColumns.clear();
         sortingStatusChanged();
     }
@@ -263,7 +280,7 @@ public class TableSorter extends AbstractTableModel {
         return getViewToModel()[viewIndex].modelIndex;
     }
 
-    int[] getModelToView() {
+    private int[] getModelToView() {
         if (modelToView == null) {
             int n = getViewToModel().length;
             modelToView = new int[n];
@@ -314,7 +331,7 @@ public class TableSorter extends AbstractTableModel {
     // Helper classes
 
     private class Row implements Comparable<Row> {
-        int modelIndex;
+        private int modelIndex;
 
         Row(int index) {
             this.modelIndex = index;
@@ -524,7 +541,7 @@ public class TableSorter extends AbstractTableModel {
     }
 
     private class SortableHeaderRenderer implements TableCellRenderer {
-        TableCellRenderer tableCellRenderer;
+        private TableCellRenderer tableCellRenderer;
 
         SortableHeaderRenderer(TableCellRenderer tableCellRenderer) {
             this.tableCellRenderer = tableCellRenderer;
@@ -551,8 +568,8 @@ public class TableSorter extends AbstractTableModel {
     }
 
     private static class Directive {
-        int column;
-        int direction;
+        private int column;
+        private int direction;
 
         Directive(int column, int direction) {
             this.column = column;
