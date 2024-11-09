@@ -73,11 +73,9 @@ public class JingleInfoFrame extends JFrame implements ActionListener {
      * @param type The mime type the contents should be displayed as.
      */
     public JingleInfoFrame(ClassLoader cl, String name, String type) {
-	String text = "";
-	InputStream is = null;
-	try {
-	    is = cl.getResourceAsStream(name);
-	    BufferedReader br = new BufferedReader(new InputStreamReader(is));
+	String text;
+	try (InputStream is = cl.getResourceAsStream(name);
+	     BufferedReader br = new BufferedReader(new InputStreamReader(is))){
 	    StringBuilder sb = new StringBuilder();
 	    String line;
 	    while ((line = br.readLine()) != null) {
@@ -86,12 +84,6 @@ public class JingleInfoFrame extends JFrame implements ActionListener {
 	    text = sb.toString();
 	} catch (IOException ioe) {
 	    text = JingleResources.getString("INFO.ERROR.TEXT");
-	} finally {
-	    if (is != null) {
-		try {
-		    is.close();
-		} catch (IOException ioe2) { }
-	    }
 	}
 	setTitle(name);
 	makeWindow(text, type);
