@@ -25,10 +25,21 @@ public class JingleIntTextField extends JTextField {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Creates a new JingleIntTextField with the specified number of columns.
+     *
+     * @param cols the number of columns to use to calculate the preferred width
+     */
     public JingleIntTextField(int cols) {
 	super(cols);
     }
 
+    /**
+     * Creates a new JingleIntTextField with the specified number of columns.
+     *
+     * @param value the initial value of the JingleIntTextField
+     * @param cols the number of columns to use to calculate the preferred width
+     */
     public JingleIntTextField(int value, int cols) {
 	super(Integer.toString(value), cols);
     }
@@ -54,6 +65,11 @@ public class JingleIntTextField extends JTextField {
 	}
     }
 
+    /**
+     * Get the value in the text field.
+     *
+     * @return the value contained in this text field, as an int
+     */
     public int getInt() {
 	return Integer.parseInt(getText());
     }

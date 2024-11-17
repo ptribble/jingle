@@ -127,5 +127,4 @@ public class JingleInfoFrame extends JFrame implements ActionListener {
 	setVisible(false);
 	dispose();
     }
-
 }

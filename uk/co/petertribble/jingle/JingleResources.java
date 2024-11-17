@@ -22,9 +22,19 @@ public final class JingleResources {
     private static final ResourceBundle JINGLERES =
 	ResourceBundle.getBundle("properties/jingle");
 
+    /*
+     * This class cannot be instantiated.
+     */
     private JingleResources() {
     }
 
+    /**
+     * Get the value of the resource for the given key.
+     *
+     * @param key the String naming the desired key
+     *
+     * @return a String containing the value for the given key
+     */
     public static String getString(String key) {
 	return JINGLERES.getString(key);
     }

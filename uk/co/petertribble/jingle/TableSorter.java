@@ -124,16 +124,30 @@ public class TableSorter extends AbstractTableModel {
     private Map<Class, Comparator> columnComparators = new HashMap<>();
     private List<Directive> sortingColumns = new ArrayList<>();
 
+    /**
+     * Create a new TableSorter.
+     */
     public TableSorter() {
         this.mouseListener = new MouseHandler();
         this.tableModelListener = new TableModelHandler();
     }
 
+    /**
+     * Create a new TableSorter.
+     *
+     * @param tableModel the Model to be sorted
+     */
     public TableSorter(TableModel tableModel) {
         this();
         setTableModel(tableModel);
     }
 
+    /**
+     * Create a new TableSorter.
+     *
+     * @param tableHeader the JTableHeader applied to this Model
+     * @param tableModel the Model to be sorted
+     */
     public TableSorter(TableModel tableModel, JTableHeader tableHeader) {
         this();
         setTableHeader(tableHeader);
@@ -145,10 +159,20 @@ public class TableSorter extends AbstractTableModel {
         modelToView = null;
     }
 
+    /**
+     * Get the TableModel associated with this TableSorter.
+     *
+     * @return the TableModel associated with this TableSorter
+     */
     public TableModel getTableModel() {
         return tableModel;
     }
 
+    /**
+     * Set the TableModel associated with this TableSorter.
+     *
+     * @param tableModel the TableModel to be associated with this TableSorter
+     */
     public void setTableModel(TableModel tableModel) {
         if (this.tableModel != null) {
             this.tableModel.removeTableModelListener(tableModelListener);
@@ -163,10 +187,21 @@ public class TableSorter extends AbstractTableModel {
         fireTableStructureChanged();
     }
 
+    /**
+     * Get the JTableHeader associated with this TableSorter.
+     *
+     * @return the JTableHeader associated with this TableSorter
+     */
     public JTableHeader getTableHeader() {
         return tableHeader;
     }
 
+    /**
+     * Set the JTableHeader associated with this TableSorter.
+     *
+     * @param tableHeader the JTableHeader to be associated with this
+     * TableSorter
+     */
     public void setTableHeader(JTableHeader tableHeader) {
         if (this.tableHeader != null) {
             this.tableHeader.removeMouseListener(mouseListener);
@@ -187,6 +222,12 @@ public class TableSorter extends AbstractTableModel {
         }
     }
 
+    /**
+     * Get whether the table is currently being sorted.
+     *
+     * @return true if the table is being sorted, specifically if the number
+     * columns being sorted is non-zero
+     */
     public boolean isSorting() {
         return sortingColumns.size() != 0;
     }
@@ -200,6 +241,13 @@ public class TableSorter extends AbstractTableModel {
         return EMPTY_DIRECTIVE;
     }
 
+    /**
+     * Get the current sorting status of a given column.
+     *
+     * @param column the column to return the sorting status of
+     *
+     * @return the sorting status of the requested column
+     */
     public int getSortingStatus(int column) {
         return getDirective(column).direction;
     }
@@ -212,6 +260,12 @@ public class TableSorter extends AbstractTableModel {
         }
     }
 
+    /**
+     * Set the current sorting status of a given column.
+     *
+     * @param column the column whose sorting status should be set
+     * @param status the new value of the given column's sorting status
+     */
     public void setSortingStatus(int column, int status) {
         Directive d = getDirective(column);
         if (d != EMPTY_DIRECTIVE) {
@@ -241,6 +295,12 @@ public class TableSorter extends AbstractTableModel {
         sortingStatusChanged();
     }
 
+    /**
+     * Set the Comparator for a given class.
+     *
+     * @param type the Class the comparator should apply to
+     * @param comparator the Comparator to apply
+     */
     public void setColumnComparator(Class type, Comparator comparator) {
         if (comparator == null) {
             columnComparators.remove(type);
@@ -276,6 +336,13 @@ public class TableSorter extends AbstractTableModel {
         return viewToModel;
     }
 
+    /**
+     * Map the index in the view to the model.
+     *
+     * @param viewIndex the index in the view
+     *
+     * @return the index in the underlying model
+     */
     public int modelIndex(int viewIndex) {
         return getViewToModel()[viewIndex].modelIndex;
     }

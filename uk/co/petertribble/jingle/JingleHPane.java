@@ -16,39 +16,35 @@
 package uk.co.petertribble.jingle;
 
 import java.awt.Insets;
-import javax.swing.JTabbedPane;
 import javax.swing.JEditorPane;
-import java.net.URL;
-import javax.swing.event.*;
 
 /**
- * A html JTextPane.
+ * An uneditable JTextPane with a fixed border.
  *
  * @author Peter C. Tribble (peter.tribble@gmail.com)
  */
-public class JingleHPane extends JEditorPane implements HyperlinkListener {
+public class JingleHPane extends JEditorPane {
 
     private static final long serialVersionUID = 1L;
 
-    private JTabbedPane jtp;
-
+    /**
+     * Create a new JingleHPane, which is a JEditorPane expecting text/html.
+     *
+     * @param text the String to display in the JingleHPane
+     */
     public JingleHPane(String text) {
 	this(text, "text/html");
     }
 
+    /**
+     * Create a new JingleHPane, which is a custom JEditorPane.
+     *
+     * @param text the String to display in the JingleHPane
+     * @param type the mime type of the text
+     */
     public JingleHPane(String text, String type) {
 	super(type, text);
 	setup();
-    }
-
-    public JingleHPane(URL url, JTabbedPane jtp) {
-	super();
-	this.jtp = jtp;
-	try {
-	    setPage(url);
-	} catch (java.io.IOException ioe) {}
-	setup();
-	addHyperlinkListener(this);
     }
 
     private void setup() {
@@ -56,19 +52,4 @@ public class JingleHPane extends JEditorPane implements HyperlinkListener {
 	setCaretPosition(0);
 	setEditable(false);
     }
-
-    @Override
-    public void hyperlinkUpdate(HyperlinkEvent ev) {
-	if (ev.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-	    String desc = ev.getDescription();
-	    if ("./".equals(desc)) {
-		desc = "index.html";
-	    }
-	    // System.out.println("Link: " + desc);
-	    if (jtp.indexOfTab(desc) > -1) {
-		jtp.setSelectedIndex(jtp.indexOfTab(desc));
-	    }
-	}
-    }
-
 }
