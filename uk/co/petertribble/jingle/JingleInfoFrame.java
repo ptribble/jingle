@@ -82,7 +82,7 @@ public class JingleInfoFrame extends JFrame implements ActionListener {
     public JingleInfoFrame(ClassLoader cl, String name, String type) {
 	String text;
 	try (InputStream is = cl.getResourceAsStream(name);
-	     BufferedReader br = new BufferedReader(new InputStreamReader(is))){
+	    BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
 	    StringBuilder sb = new StringBuilder();
 	    String line;
 	    while ((line = br.readLine()) != null) {

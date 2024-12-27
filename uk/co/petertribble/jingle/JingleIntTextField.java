@@ -61,7 +61,7 @@ public class JingleIntTextField extends JTextField {
 		try {
 		    Integer.parseInt(str);
 		    super.insertString(offs, str, a);
-		} catch (NumberFormatException nfe) {}
+		} catch (NumberFormatException nfe) { }
 	}
     }
 

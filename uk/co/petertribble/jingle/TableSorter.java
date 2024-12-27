@@ -582,15 +582,15 @@ public class TableSorter extends AbstractTableModel {
 	    Polygon pol = new Polygon();
             // In a compound sort, make each successive triangle 20%
             // smaller than the previous one.
-            int dx = (int) (size/2*Math.pow(0.8, priority));
-	    dx = ascending ? dx +1 : dx;
+            int dx = (int) (size / 2 * Math.pow(0.8, priority));
+	    dx = ascending ? dx + 1 : dx;
             int dy = ascending ? dx : -dx;
             // Align icon (roughly) with font baseline.
-            y = y + 5*size/6 + (ascending ? -dy : 0);
+            y = y + 5 * size / 6 + (ascending ? -dy : 0);
 
 	    pol.addPoint(x, y);
-	    pol.addPoint(x + (dx/2), y+dy);
-	    pol.addPoint(x - (dx/2), y+dy);
+	    pol.addPoint(x + (dx / 2), y + dy);
+	    pol.addPoint(x - (dx / 2), y + dy);
 
             g.setColor(color);
 	    g.fillPolygon(pol);

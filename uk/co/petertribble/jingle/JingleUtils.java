@@ -38,8 +38,8 @@ public final class JingleUtils {
      */
     public static void Center(Window w) {
 	Dimension d = w.getToolkit().getScreenSize();
-	w.setLocation(((int) d.getWidth()-w.getWidth())/2,
-		((int) d.getHeight()-w.getHeight())/2);
+	w.setLocation(((int) d.getWidth() - w.getWidth()) / 2,
+		((int) d.getHeight() - w.getHeight()) / 2);
     }
 
     /**
