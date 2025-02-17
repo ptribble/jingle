@@ -2,14 +2,14 @@
 #
 # SPDX-License-Identifier: CDDL-1.0
 #
+# Copyright 2025 Peter Tribble
+#
 # build jingle
 #
 
 PATH=/usr/jdk/instances/jdk1.8.0/bin:$PATH
 export PATH
 
-XFLAGS="-Xlint -Xlint:-rawtypes"
-#XFLAGS=""
 JUMBLEDIR="../jumble"
 
 #
@@ -36,16 +36,16 @@ pmd|-pmd)
 	if [ ! -d "${HOME}/.pmd" ]; then
 	    mkdir -p "${HOME}/.pmd"
 	fi
-	pmd check --cache "${PMDCACHE}" -d uk -R "$RULESETS" --use-version java-1.8 --aux-classpath $(echo lib/java/* | sed 's= =:=g') 2>/dev/null
+	pmd check --cache "${PMDCACHE}" -d uk -R "$RULESETS" --use-version java-1.8 2>/dev/null
 	exit 0
 	;;
-doc|-doc)
+javadoc|-javadoc)
     rm -fr javadoc
     mkdir javadoc
-    javadoc -d javadoc uk.co.petertribble.jingle
+    javadoc -classpath ${JUMBLEDIR}/jumble.jar:. -d javadoc uk.co.petertribble.jingle
     ;;
 esac
 
-javac ${XFLAGS} -classpath ${JUMBLEDIR}/jumble.jar uk/co/petertribble/jingle/*.java
+javac -Xlint -Xlint:-rawtypes -classpath ${JUMBLEDIR}/jumble.jar uk/co/petertribble/jingle/*.java
 
 jar cf jingle.jar properties/*.properties $(find uk/co/petertribble/jingle -name '*.class')
