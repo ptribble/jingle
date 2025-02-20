@@ -10,7 +10,7 @@
  * source. A copy of the CDDL is also available via the Internet at
  * http://www.illumos.org/license/CDDL.
  *
- * Copyright (C) 2004-2024 Peter C. Tribble
+ * Copyright (C) 2004-2025 Peter C. Tribble
  */
 
 package uk.co.petertribble.jingle;
@@ -21,7 +21,7 @@ import javax.swing.text.*;
 /**
  * A JTextField that will accept only integers.
  */
-public class JingleIntTextField extends JTextField {
+public final class JingleIntTextField extends JTextField {
 
     private static final long serialVersionUID = 1L;
 

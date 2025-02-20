@@ -10,7 +10,7 @@
  * source. A copy of the CDDL is also available via the Internet at
  * http://www.illumos.org/license/CDDL.
  *
- * Copyright (C) 2004-2024  Peter C. Tribble
+ * Copyright (C) 2004-2025  Peter C. Tribble
  */
 
 package uk.co.petertribble.jingle;
@@ -31,27 +31,27 @@ public class JingleVPanel extends JPanel implements Scrollable {
     private static final long serialVersionUID = 1L;
 
     @Override
-    public Dimension getPreferredScrollableViewportSize() {
+    public final Dimension getPreferredScrollableViewportSize() {
 	return getPreferredSize();
     }
 
     @Override
-    public int getScrollableBlockIncrement(Rectangle r, int o, int d) {
+    public final int getScrollableBlockIncrement(Rectangle r, int o, int d) {
 	return r.height;
     }
 
     @Override
-    public int getScrollableUnitIncrement(Rectangle r, int o, int d) {
+    public final int getScrollableUnitIncrement(Rectangle r, int o, int d) {
 	return 24;
     }
 
     @Override
-    public boolean getScrollableTracksViewportWidth() {
+    public final boolean getScrollableTracksViewportWidth() {
 	return true;
     }
 
     @Override
-    public boolean getScrollableTracksViewportHeight() {
+    public final boolean getScrollableTracksViewportHeight() {
 	return false;
     }
 

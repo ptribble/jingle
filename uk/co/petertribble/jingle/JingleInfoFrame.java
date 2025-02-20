@@ -25,7 +25,7 @@ import uk.co.petertribble.jumble.JumbleFile;
  * A popup window suitable for about or help windows. The window displays
  * simple text, and has a button to close the window.
  */
-public class JingleInfoFrame extends JFrame implements ActionListener {
+public final class JingleInfoFrame extends JFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 

@@ -10,7 +10,7 @@
  * source. A copy of the CDDL is also available via the Internet at
  * http://www.illumos.org/license/CDDL.
  *
- * Copyright (C) 2008-2024  Peter C. Tribble
+ * Copyright (C) 2008-2025  Peter C. Tribble
  */
 
 package uk.co.petertribble.jingle;
@@ -23,7 +23,7 @@ import java.awt.Insets;
  *
  * @author Peter C. Tribble (peter.tribble@gmail.com)
  */
-public class JingleTextPane extends JEditorPane {
+public final class JingleTextPane extends JEditorPane {
 
     private static final long serialVersionUID = 1L;
 

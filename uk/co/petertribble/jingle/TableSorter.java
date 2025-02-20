@@ -88,11 +88,11 @@ import javax.swing.table.TableModel;
  * @version 2.0 02/27/04
  */
 
-public class TableSorter extends AbstractTableModel {
+public final class TableSorter extends AbstractTableModel {
 
     private static final long serialVersionUID = 1L;
 
-    protected TableModel tableModel;
+    private TableModel tableModel;
 
     public static final int DESCENDING = -1;
     public static final int NOT_SORTED = 0;
@@ -281,7 +281,7 @@ public class TableSorter extends AbstractTableModel {
         sortingStatusChanged();
     }
 
-    protected Icon getHeaderRendererIcon(int column, int size) {
+    private Icon getHeaderRendererIcon(int column, int size) {
         Directive d = getDirective(column);
         if (d == EMPTY_DIRECTIVE) {
             return null;
@@ -309,7 +309,7 @@ public class TableSorter extends AbstractTableModel {
         }
     }
 
-    protected Comparator getComparator(int column) {
+    private Comparator getComparator(int column) {
         Class columnType = tableModel.getColumnClass(column);
         Comparator comparator = columnComparators.get(columnType);
         if (comparator != null) {
