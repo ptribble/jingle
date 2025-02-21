@@ -15,7 +15,7 @@ JUMBLEDIR="../jumble"
 #
 # new PMD version has categories only
 #
-PMDCATRULES="security performance"
+PMDCATRULES="security performance quickstart"
 PMDCACHE="${HOME}/.pmd/cache.pkgview"
 
 case $1 in
