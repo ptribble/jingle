@@ -1,6 +1,7 @@
 package uk.co.petertribble.jingle;
 
-import javax.swing.*;
+import javax.swing.Spring;
+import javax.swing.SpringLayout;
 import java.awt.Component;
 import java.awt.Container;
 
