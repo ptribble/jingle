@@ -36,7 +36,7 @@ public final class JingleUtils {
      *
      * @param w The Window to be positioned
      */
-    public static void Center(Window w) {
+    public static void centerWindow(Window w) {
 	Dimension d = w.getToolkit().getScreenSize();
 	w.setLocation(((int) d.getWidth() - w.getWidth()) / 2,
 		((int) d.getHeight() - w.getHeight()) / 2);

@@ -1,3 +1,7 @@
+Rename JingleUtils.Center to JingleUtils.centerWindow
+
+Much code tidying
+
 Resync TableSorter back from illuminate
 
 Push to github
