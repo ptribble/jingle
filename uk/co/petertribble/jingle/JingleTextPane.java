@@ -16,7 +16,6 @@
 package uk.co.petertribble.jingle;
 
 import javax.swing.JEditorPane;
-import java.awt.Insets;
 
 /**
  * A Scrollable panel containing Text.
@@ -48,7 +47,7 @@ public final class JingleTextPane extends JEditorPane {
     @Override
     public void setText(String s) {
 	super.setText(s);
-	setMargin(new Insets(5, 5, 5, 5));
+	setMargin(JingleUtils.defInsets());
 	setCaretPosition(0);
 	setEditable(false);
     }

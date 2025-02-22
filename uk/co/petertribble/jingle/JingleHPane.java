@@ -10,12 +10,11 @@
  * source. A copy of the CDDL is also available via the Internet at
  * http://www.illumos.org/license/CDDL.
  *
- * Copyright (C) 2004-2024  Peter C. Tribble
+ * Copyright (C) 2004-2025  Peter C. Tribble
  */
 
 package uk.co.petertribble.jingle;
 
-import java.awt.Insets;
 import javax.swing.JEditorPane;
 
 /**
@@ -48,7 +47,7 @@ public class JingleHPane extends JEditorPane {
     }
 
     private void setup() {
-	setMargin(new Insets(5, 5, 5, 5));
+	setMargin(JingleUtils.defInsets());
 	setCaretPosition(0);
 	setEditable(false);
     }
