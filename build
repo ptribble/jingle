@@ -13,10 +13,11 @@ export PATH
 JUMBLEDIR="../jumble"
 
 #
-# new PMD version has categories only
+# new PMD version 7 only has categories, configured in pmd-ruleset.xml
 #
 PMDCATRULES="security performance quickstart"
-PMDCACHE="${HOME}/.pmd/cache.pkgview"
+PMDRULES="./pmd-ruleset.xml"
+PMDCACHE="${HOME}/.pmd/cache.jingle"
 
 case $1 in
 clean)
@@ -26,17 +27,10 @@ clean)
 	exit 0
 	;;
 pmd)
-	RULESETS=""
-	shift
-	for RULE in $PMDCATRULES "$@"
-	do
-	    RULESETS="${RULESETS},category/java/${RULE}.xml"
-	done
-	RULESETS=${RULESETS/,/}
 	if [ ! -d "${HOME}/.pmd" ]; then
 	    mkdir -p "${HOME}/.pmd"
 	fi
-	pmd check --cache "${PMDCACHE}" -d uk -R "$RULESETS" --use-version java-1.8 2>/dev/null
+	pmd check --cache "${PMDCACHE}" -d uk -R "${PMDRULES}" --use-version java-1.8 2>/dev/null | grep -v TableSorter
 	exit 0
 	;;
 javadoc)
