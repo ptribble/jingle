@@ -92,7 +92,7 @@ public final class TableSorter extends AbstractTableModel {
 
     private static final long serialVersionUID = 1L;
 
-    private TableModel tableModel;
+    private transient TableModel tableModel;
 
     public static final int DESCENDING = -1;
     public static final int NOT_SORTED = 0;
@@ -115,14 +115,15 @@ public final class TableSorter extends AbstractTableModel {
         }
     };
 
-    private Row[] viewToModel;
+    private transient Row[] viewToModel;
     private int[] modelToView;
 
     private JTableHeader tableHeader;
-    private MouseListener mouseListener;
-    private TableModelListener tableModelListener;
-    private Map<Class, Comparator> columnComparators = new HashMap<>();
-    private List<Directive> sortingColumns = new ArrayList<>();
+    private transient MouseListener mouseListener;
+    private transient TableModelListener tableModelListener;
+    private transient Map<Class, Comparator> columnComparators
+	= new HashMap<>();
+    private transient List<Directive> sortingColumns = new ArrayList<>();
 
     /**
      * Create a new TableSorter.

@@ -22,7 +22,7 @@ import javax.swing.JEditorPane;
  *
  * @author Peter C. Tribble (peter.tribble@gmail.com)
  */
-public class JingleHPane extends JEditorPane {
+public final class JingleHPane extends JEditorPane {
 
     private static final long serialVersionUID = 1L;
 
