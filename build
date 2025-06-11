@@ -15,7 +15,6 @@ JUMBLEDIR="../jumble"
 #
 # new PMD version 7 only has categories, configured in pmd-ruleset.xml
 #
-PMDCATRULES="security performance quickstart"
 PMDRULES="./pmd-ruleset.xml"
 PMDCACHE="${HOME}/.pmd/cache.jingle"
 
