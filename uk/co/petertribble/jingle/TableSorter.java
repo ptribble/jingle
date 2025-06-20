@@ -94,13 +94,26 @@ public final class TableSorter extends AbstractTableModel {
 
     private transient TableModel tableModel;
 
+    /**
+     * Indicates a sort in descending order.
+     */
     public static final int DESCENDING = -1;
+    /**
+     * Indicates the table is not sorted.
+     */
     public static final int NOT_SORTED = 0;
+    /**
+     * Indicates a sort in ascending order.
+     */
     public static final int ASCENDING = 1;
 
     private static final Directive EMPTY_DIRECTIVE
 	= new Directive(-1, NOT_SORTED);
 
+    /**
+     * A comparator that uses the natural ordering of its objects for
+     * comparison.
+     */
     public static final Comparator COMPARABLE_COMPARATOR = new Comparator() {
 	@SuppressWarnings("unchecked")
         @Override
@@ -108,6 +121,10 @@ public final class TableSorter extends AbstractTableModel {
             return ((Comparable) o1).compareTo(o2);
         }
     };
+    /**
+     * A comparator that uses the String version of its objects for
+     * comparison.
+     */
     public static final Comparator LEXICAL_COMPARATOR = new Comparator() {
 	@Override
         public int compare(Object o1, Object o2) {
@@ -116,8 +133,11 @@ public final class TableSorter extends AbstractTableModel {
     };
 
     private transient Row[] viewToModel;
-    private int[] modelToView;
+    private transient int[] modelToView;
 
+    /**
+     * The table header.
+     */
     private JTableHeader tableHeader;
     private transient MouseListener mouseListener;
     private transient TableModelListener tableModelListener;

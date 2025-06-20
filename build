@@ -35,7 +35,8 @@ pmd)
 javadoc)
     rm -fr javadoc
     mkdir javadoc
-    javadoc -classpath ${JUMBLEDIR}/jumble.jar:. -d javadoc uk.co.petertribble.jingle
+    javadoc -classpath ${JUMBLEDIR}/jumble.jar:. -Xdoclint:all -d javadoc uk.co.petertribble.jingle
+    exit 0
     ;;
 esac
 

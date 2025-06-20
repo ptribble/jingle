@@ -17,6 +17,9 @@ package uk.co.petertribble.jingle;
 
 import java.util.ResourceBundle;
 
+/**
+ * Provide textual resources for Jingle classes.
+ */
 public final class JingleResources {
 
     private static final ResourceBundle JINGLERES =
