@@ -11,6 +11,14 @@
 
     <rule ref="category/java/security.xml" />
     <rule ref="category/java/performance.xml" />
+    <rule ref="category/java/codestyle.xml">
+      <exclude name="AtLeastOneConstructor"/>
+      <exclude name="CallSuperInConstructor"/>
+      <exclude name="CommentDefaultAccessModifier"/>
+      <exclude name="LocalVariableCouldBeFinal"/>
+      <exclude name="MethodArgumentCouldBeFinal"/>
+      <exclude name="ShortVariable"/>
+    </rule>
     <rule ref="rulesets/java/quickstart.xml">
       <exclude name="EmptyCatchBlock"/>
     </rule>
