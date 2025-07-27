@@ -1,3 +1,5 @@
+Drop TableSorter, rely on native JTable in current jdk
+
 Rename JingleUtils.Center to JingleUtils.centerWindow
 
 Much code tidying
