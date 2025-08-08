@@ -38,6 +38,7 @@ spotbugs)
 	#
 	javac -Xlint -Xlint:-rawtypes -classpath ${JUMBLEDIR}/jumble.jar uk/co/petertribble/jingle/*.java
 	spotbugs -auxclasspath jingle.jar:${JUMBLEDIR}/jumble.jar uk
+	rm -f $(find uk/co -type f -name '*.class')
 	exit 0
 	;;
 javadoc)
@@ -51,3 +52,5 @@ esac
 javac -Xlint -Xlint:-rawtypes -classpath ${JUMBLEDIR}/jumble.jar uk/co/petertribble/jingle/*.java
 
 jar cf jingle.jar properties/*.properties $(find uk/co/petertribble/jingle -name '*.class')
+
+rm -f $(find uk/co/petertribble/jingle -type f -name '*.class')
