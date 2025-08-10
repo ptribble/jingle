@@ -1,0 +1,6 @@
+version = 1
+
+[[annotations]]
+path = [ "CHANGES", "README.md", "jingle.jar", "properties/jingle.properties" ]
+SPDX-FileCopyrightText = "2025 Peter Tribble"
+SPDX-License-Identifier = "CDDL-1.0"
