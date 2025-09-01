@@ -55,7 +55,7 @@ public final class JingleUtils {
      *
      * @param w The Window to be positioned
      */
-    public static void centerWindow(Window w) {
+    public static void centerWindow(final Window w) {
 	Dimension d = w.getToolkit().getScreenSize();
 	w.setLocation(((int) d.getWidth() - w.getWidth()) / 2,
 		((int) d.getHeight() - w.getHeight()) / 2);
@@ -74,7 +74,7 @@ public final class JingleUtils {
 		JingleResources.getString("FILE.EXIT.TEXT"), KeyEvent.VK_E);
 	fileMenuExit.addActionListener(new ActionListener() {
 	    @Override
-	    public void actionPerformed(ActionEvent e) {
+	    public void actionPerformed(final ActionEvent e) {
 		System.exit(0);
 	    }
 	});
@@ -98,7 +98,7 @@ public final class JingleUtils {
 		JingleResources.getString("FILE.CLOSE.TEXT"), KeyEvent.VK_C);
 	fileMenuExit.addActionListener(new ActionListener() {
 	    @Override
-	    public void actionPerformed(ActionEvent e) {
+	    public void actionPerformed(final ActionEvent e) {
 		f.dispose();
 	    }
 	});
@@ -113,7 +113,7 @@ public final class JingleUtils {
      * @param f the JFrame that the popup will be related to
      * @param msg the text of the message to be displayed
      */
-    public static void infoPopup(JFrame f, String msg) {
+    public static void infoPopup(final JFrame f, final String msg) {
 	JOptionPane.showMessageDialog(f, msg,
 			JingleResources.getString("POPUP.MESSAGE.TEXT"),
 			JOptionPane.INFORMATION_MESSAGE);
@@ -125,7 +125,7 @@ public final class JingleUtils {
      * @param f the JFrame that the popup will be related to
      * @param msg the text of the message to be displayed
      */
-    public static void warningPopup(JFrame f, String msg) {
+    public static void warningPopup(final JFrame f, final String msg) {
 	JOptionPane.showMessageDialog(f, msg,
 			JingleResources.getString("POPUP.WARNING.TEXT"),
 			JOptionPane.WARNING_MESSAGE);
@@ -137,7 +137,7 @@ public final class JingleUtils {
      * @param f the JFrame that the popup will be related to
      * @param msg the text of the message to be displayed
      */
-    public static void errorPopup(JFrame f, String msg) {
+    public static void errorPopup(final JFrame f, final String msg) {
 	JOptionPane.showMessageDialog(f, msg,
 			JingleResources.getString("POPUP.ERROR.TEXT"),
 			JOptionPane.ERROR_MESSAGE);

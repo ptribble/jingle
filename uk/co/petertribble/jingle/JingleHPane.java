@@ -31,7 +31,7 @@ public final class JingleHPane extends JEditorPane {
      *
      * @param text the String to display in the JingleHPane
      */
-    public JingleHPane(String text) {
+    public JingleHPane(final String text) {
 	this(text, "text/html");
     }
 
@@ -41,7 +41,7 @@ public final class JingleHPane extends JEditorPane {
      * @param text the String to display in the JingleHPane
      * @param type the mime type of the text
      */
-    public JingleHPane(String text, String type) {
+    public JingleHPane(final String text, final String type) {
 	super(type, text);
 	setup();
     }

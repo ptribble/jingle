@@ -36,12 +36,14 @@ public class JingleVPanel extends JPanel implements Scrollable {
     }
 
     @Override
-    public final int getScrollableBlockIncrement(Rectangle r, int o, int d) {
+    public final int getScrollableBlockIncrement(final Rectangle r,
+						 final int o, final int d) {
 	return r.height;
     }
 
     @Override
-    public final int getScrollableUnitIncrement(Rectangle r, int o, int d) {
+    public final int getScrollableUnitIncrement(final Rectangle r,
+						final int o, final int d) {
 	return 24;
     }
 

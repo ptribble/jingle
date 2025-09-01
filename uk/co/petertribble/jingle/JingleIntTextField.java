@@ -33,7 +33,7 @@ public final class JingleIntTextField extends JTextField {
      *
      * @param cols the number of columns to use to calculate the preferred width
      */
-    public JingleIntTextField(int cols) {
+    public JingleIntTextField(final int cols) {
 	super(cols);
     }
 
@@ -43,7 +43,7 @@ public final class JingleIntTextField extends JTextField {
      * @param value the initial value of the JingleIntTextField
      * @param cols the number of columns to use to calculate the preferred width
      */
-    public JingleIntTextField(int value, int cols) {
+    public JingleIntTextField(final int value, final int cols) {
 	super(Integer.toString(value), cols);
     }
 
@@ -56,7 +56,8 @@ public final class JingleIntTextField extends JTextField {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public void insertString(int offs, String str, AttributeSet a)
+	public void insertString(final int offs, final String str,
+				 final AttributeSet a)
             throws BadLocationException {
 		if (str == null) {
 		    return;

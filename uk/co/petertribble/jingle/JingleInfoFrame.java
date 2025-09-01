@@ -48,7 +48,7 @@ public final class JingleInfoFrame extends JFrame implements ActionListener {
      * @param f The <code>File</code> whose contents are to be displayed. The
      * file contents should be text.
      */
-    public JingleInfoFrame(File f) {
+    public JingleInfoFrame(final File f) {
 	this(JumbleFile.getStringContents(f), "text/plain");
     }
 
@@ -58,7 +58,7 @@ public final class JingleInfoFrame extends JFrame implements ActionListener {
      *
      * @param s The <code>String</code> to be displayed.
      */
-    public JingleInfoFrame(String s) {
+    public JingleInfoFrame(final String s) {
 	this(s, "text/plain");
     }
 
@@ -70,7 +70,7 @@ public final class JingleInfoFrame extends JFrame implements ActionListener {
      * file contents should be text.
      * @param type The mime type the contents should be displayed as.
      */
-    public JingleInfoFrame(File f, String type) {
+    public JingleInfoFrame(final File f, final String type) {
 	this(JumbleFile.getStringContents(f), type);
     }
 
@@ -81,7 +81,7 @@ public final class JingleInfoFrame extends JFrame implements ActionListener {
      * @param s The <code>String</code> to be displayed.
      * @param type The mime type the contents should be displayed as.
      */
-    public JingleInfoFrame(String s, String type) {
+    public JingleInfoFrame(final String s, final String type) {
 	makeWindow(s, type);
     }
 
@@ -92,7 +92,8 @@ public final class JingleInfoFrame extends JFrame implements ActionListener {
      * @param name The name of the resource to display.
      * @param type The mime type the contents should be displayed as.
      */
-    public JingleInfoFrame(ClassLoader cl, String name, String type) {
+    public JingleInfoFrame(final ClassLoader cl, final String name,
+			   final String type) {
 	String text;
 	try (InputStream is = cl.getResourceAsStream(name);
 	    BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
@@ -109,7 +110,7 @@ public final class JingleInfoFrame extends JFrame implements ActionListener {
 	makeWindow(text, type);
     }
 
-    private void makeWindow(String text, String type) {
+    private void makeWindow(final String text, final String type) {
 	JingleVPanel p = new JingleVPanel();
 	p.setLayout(new BorderLayout());
 	p.add(new JScrollPane(new JingleHPane(text, type)),
@@ -130,13 +131,13 @@ public final class JingleInfoFrame extends JFrame implements ActionListener {
 
     class WindowExit extends WindowAdapter {
 	@Override
-	public void windowClosing(WindowEvent we) {
+	public void windowClosing(final WindowEvent we) {
 	    dispose();
 	}
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
 	setVisible(false);
 	dispose();
     }

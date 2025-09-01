@@ -38,7 +38,7 @@ public final class JingleResources {
      *
      * @return a String containing the value for the given key
      */
-    public static String getString(String key) {
+    public static String getString(final String key) {
 	return JINGLERES.getString(key);
     }
 }

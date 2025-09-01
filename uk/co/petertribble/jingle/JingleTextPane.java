@@ -39,13 +39,13 @@ public final class JingleTextPane extends JEditorPane {
      *
      * @param contentType the content type used to format the content
      */
-    public JingleTextPane(String contentType) {
+    public JingleTextPane(final String contentType) {
 	super();
 	setContentType(contentType);
     }
 
     @Override
-    public void setText(String s) {
+    public void setText(final String s) {
 	super.setText(s);
 	setMargin(JingleUtils.defInsets());
 	setCaretPosition(0);

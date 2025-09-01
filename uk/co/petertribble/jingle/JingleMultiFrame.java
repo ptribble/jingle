@@ -46,7 +46,7 @@ public final class JingleMultiFrame {
      * @param f the JFrame to add to the registry
      * @param jmi the JMenuItem used to exit the given JFrame
      */
-    public static void register(JFrame f, JMenuItem jmi) {
+    public static void register(final JFrame f, final JMenuItem jmi) {
 	freg.put(f, jmi);
 	setEnabled(freg.size() > 1);
     }
@@ -58,7 +58,7 @@ public final class JingleMultiFrame {
      *
      * @param f the JFrame to remove from the registry
      */
-    public static void unregister(JFrame f) {
+    public static void unregister(final JFrame f) {
 	f.dispose();
 	freg.remove(f);
 	if (freg.isEmpty()) {
@@ -67,7 +67,7 @@ public final class JingleMultiFrame {
 	setEnabled(freg.size() > 1);
     }
 
-    private static void setEnabled(boolean b) {
+    private static void setEnabled(final boolean b) {
 	for (JMenuItem jmi : freg.values()) {
 	    jmi.setEnabled(b);
 	}
