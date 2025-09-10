@@ -10,7 +10,7 @@
  * source. A copy of the CDDL is also available via the Internet at
  * http://www.illumos.org/license/CDDL.
  *
- * Copyright (C) 2005-2025 Peter C. Tribble
+ * Copyright 2005-2025 Peter C. Tribble
  */
 
 package uk.co.petertribble.jingle;
