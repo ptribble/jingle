@@ -20,9 +20,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import java.awt.Dimension;
 import java.awt.Insets;
-import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -48,17 +46,6 @@ public final class JingleUtils {
 	new Insets(IMARGIN, IMARGIN, IMARGIN, IMARGIN);
 
     private JingleUtils() {
-    }
-
-    /**
-     * Locate a window centrally on the screen.
-     *
-     * @param w The Window to be positioned
-     */
-    public static void centerWindow(final Window w) {
-	Dimension d = w.getToolkit().getScreenSize();
-	w.setLocation(((int) d.getWidth() - w.getWidth()) / 2,
-		((int) d.getHeight() - w.getHeight()) / 2);
     }
 
     /**
