@@ -32,6 +32,7 @@ import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import uk.co.petertribble.jumble.JumbleFile;
 
 /**
@@ -96,7 +97,8 @@ public final class JingleInfoFrame extends JFrame implements ActionListener {
 			   final String type) {
 	String text;
 	try (InputStream is = cl.getResourceAsStream(name);
-	    BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+	    BufferedReader br = new BufferedReader(
+			new InputStreamReader(is, StandardCharsets.UTF_8))) {
 	    StringBuilder sb = new StringBuilder();
 	    String line;
 	    while ((line = br.readLine()) != null) {
