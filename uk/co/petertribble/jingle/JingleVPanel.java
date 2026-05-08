@@ -10,15 +10,15 @@
  * source. A copy of the CDDL is also available via the Internet at
  * http://www.illumos.org/license/CDDL.
  *
- * Copyright 2004-2025 Peter C. Tribble
+ * Copyright 2004-2026 Peter C. Tribble
  */
 
 package uk.co.petertribble.jingle;
 
-import javax.swing.JPanel;
-import javax.swing.Scrollable;
 import java.awt.Dimension;
 import java.awt.Rectangle;
+import javax.swing.JPanel;
+import javax.swing.Scrollable;
 
 /**
  * A JPanel that scrolls vertically but will squeeze horizontally.

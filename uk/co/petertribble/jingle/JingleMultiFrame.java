@@ -10,15 +10,15 @@
  * source. A copy of the CDDL is also available via the Internet at
  * http://www.illumos.org/license/CDDL.
  *
- * Copyright 2005-2024 Peter C. Tribble
+ * Copyright 2005-2026 Peter C. Tribble
  */
 
 package uk.co.petertribble.jingle;
 
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JMenuItem;
-import java.util.Map;
-import java.util.HashMap;
 
 /**
  * A Registry of JFrames. Allows an application to have multiple windows

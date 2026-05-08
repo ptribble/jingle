@@ -10,18 +10,11 @@
  * source. A copy of the CDDL is also available via the Internet at
  * http://www.illumos.org/license/CDDL.
  *
- * Copyright 2005-2025 Peter C. Tribble
+ * Copyright 2005-2026 Peter C. Tribble
  */
 
 package uk.co.petertribble.jingle;
 
-import javax.swing.BorderFactory;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,10 +22,17 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import uk.co.petertribble.jumble.JumbleFile;
 
 /**
