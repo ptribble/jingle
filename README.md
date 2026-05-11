@@ -6,4 +6,4 @@ LICENSES/CDDL-1.0.txt.
 
 Requires jumble.
 
-http://petertribble.co.uk/Solaris/jingle.html
+https://www.petertribble.co.uk/Solaris/jingle.html
