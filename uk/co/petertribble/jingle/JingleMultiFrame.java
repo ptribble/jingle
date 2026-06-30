@@ -30,6 +30,9 @@ import javax.swing.JMenuItem;
  */
 public final class JingleMultiFrame {
 
+    /**
+     * A Map to track the existing frames and their menu items.
+     */
     private static Map<JFrame, JMenuItem> freg;
 
     static {

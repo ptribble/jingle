@@ -42,8 +42,8 @@ public final class JingleUtils {
     /**
      * A fixed Insets so that defInsets() doesn't create a new one every time.
      */
-    private static final Insets DEFINSET =
-	new Insets(IMARGIN, IMARGIN, IMARGIN, IMARGIN);
+    private static final Insets DEFINSET
+	= new Insets(IMARGIN, IMARGIN, IMARGIN, IMARGIN);
 
     private JingleUtils() {
     }

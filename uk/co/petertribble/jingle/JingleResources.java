@@ -10,7 +10,7 @@
  * source. A copy of the CDDL is also available via the Internet at
  * http://www.illumos.org/license/CDDL.
  *
- * Copyright 2025 Peter C. Tribble
+ * Copyright 2026 Peter C. Tribble
  */
 
 package uk.co.petertribble.jingle;
@@ -22,8 +22,11 @@ import java.util.ResourceBundle;
  */
 public final class JingleResources {
 
-    private static final ResourceBundle JINGLERES =
-	ResourceBundle.getBundle("properties/jingle");
+    /**
+     * The name of the properties file.
+     */
+    private static final ResourceBundle JINGLERES
+	= ResourceBundle.getBundle("properties/jingle");
 
     /*
      * This class cannot be instantiated.
